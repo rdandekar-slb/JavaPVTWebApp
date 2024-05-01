@@ -1,19 +1,17 @@
 package com.ausexperts.unitest;
+import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AcctDetailsTest {
-    AcctDetails newAccount = new AcctDetails("Rashmin0", 5000001, 0.0, "Savings");
+    AcctDetails newAct = new AcctDetails("Rashmin", 500001, 500, "Savings");
 
-    void validateAccountName(){
-        if (newAccount.getAcctName().matches("^[a-zA-Z]*$")){
-            System.out.println("Name is valid");
-        }
-        else {
-            System.out.println("Invalid name");
-        }
+    @Test
+    public void validateName(){
+        assertTrue(newAct.getAcctName().matches("^[a-zA-Z0-9]*$"));
     }
 
-    public static void main(String[] args) {
-        AcctDetailsTest adt = new AcctDetailsTest();
-        adt.validateAccountName();
+    @Test
+    public void validateBalance(){
+        assertTrue(newAct.getAcctBalance()>=0);
     }
 }

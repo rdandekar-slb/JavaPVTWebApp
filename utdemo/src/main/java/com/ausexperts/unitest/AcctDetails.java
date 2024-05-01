@@ -17,5 +17,9 @@ public class AcctDetails {
         return this.acctName;
     }
 
+    public Double getAcctBalance(){
+        return this.acctBalance;
+    }
+
 
 }
